@@ -1,7 +1,7 @@
 [
   {
     "title": "Hiking In the Mountains",
-    "location": "Bandarban",
+    "location": "Melbourne",
     "image": "https://i.ibb.co/hfzf6CJ/Experience2.jpg",
     "price": 57,
     "host": "John Doe",
@@ -9,7 +9,7 @@
   },
   {
     "title": "Sky Diving like never before",
-    "location": "Dubai",
+    "location": "Sydney",
     "image": "https://i.ibb.co/2jb4bvR/Experience3.jpg",
     "price": 157,
     "host": "Max Mars",
@@ -17,7 +17,7 @@
   },
   {
     "title": "See Sunset in the beach",
-    "location": "Kuakata",
+    "location": "Canberra",
     "image": "https://i.ibb.co/hfzf6CJ/Experience2.jpg",
     "price": 47,
     "host": "John Doe",
@@ -25,7 +25,15 @@
   },
   {
     "title": "See Sunset in the beach",
-    "location": "Rangamati",
+    "location": "Brisbane",
+    "image": "https://i.ibb.co/bB98pjR/Experience1.jpg",
+    "price": 98,
+    "host": "John Doe",
+    "rating": "97"
+  },
+  {
+    "title": "Extra See Sunset in the beach",
+    "location": "Adelaide",
     "image": "https://i.ibb.co/bB98pjR/Experience1.jpg",
     "price": 98,
     "host": "John Doe",

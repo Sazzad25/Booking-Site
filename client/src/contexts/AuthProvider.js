@@ -22,6 +22,7 @@ const googleProvider = new GoogleAuthProvider()
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true)
+  console.log(user);
 
   //1. Create User
   const createUser = (email, password) => {
@@ -53,7 +54,7 @@ const AuthProvider = ({ children }) => {
   // 5. Logout
   const logout = () => {
     setLoading(true)
-    localStorage.removeItem('aircnc-token')
+    localStorage.removeItem('room-token')
     return signOut(auth)
   }
 
