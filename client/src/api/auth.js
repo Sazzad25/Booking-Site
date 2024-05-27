@@ -19,10 +19,21 @@ export const setAuthToken = (user) => {
     });
 };
 
-export const saveBooking = bookingData => {
+export const saveBooking = (bookingData) => {
   // Post method fetch
   return fetch(`${process.env.REACT_APP_API_URL}/bookings`, {
     method: "POST",
+    headers: {
+      "content-type": "application/json",
+    },
+    body: JSON.stringify(bookingData),
+  });
+};
+///dsd
+export const BookingDataRemove = (bookingData) => {
+  // Post method fetch
+  return fetch(`http://localhost:8000/restart/${bookingData._id}`, {
+    method: "DELETE",
     headers: {
       "content-type": "application/json",
     },
