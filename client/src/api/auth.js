@@ -30,13 +30,13 @@ export const saveBooking = (bookingData) => {
   });
 };
 ///dsd
-export const BookingDataRemove = (bookingData) => {
+export const BookingDataRemove = (id) => {
   // Post method fetch
-  return fetch(`http://localhost:8000/restart/${bookingData._id}`, {
+  return fetch(`${process.env.REACT_APP_API_URL}/restart/${id}`, {
     method: "DELETE",
     headers: {
       "content-type": "application/json",
     },
-    body: JSON.stringify(bookingData),
+    body: JSON.stringify(),
   });
 };

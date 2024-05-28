@@ -259,6 +259,7 @@ async function run() {
     // });
     app.delete("/restart/:id", async (req, res) => {
       const id = req.params.id;
+      console.log(id);
       const query = { _id: ObjectId(id) };
       const result = await homesCollection.deleteOne(query);
       res.send(result);
@@ -267,10 +268,9 @@ async function run() {
     // Save bookings
     app.post("/bookings", async (req, res) => {
       const booking = req.body;
-      console.log(booking);
       const result = await bookingsCollection.insertOne(booking);
 
-      console.log("result----->", result);
+      // console.log("result----->", result);
       sendMail(
         {
           subject: "Booking Successful!",
@@ -284,7 +284,6 @@ async function run() {
     // Create Payment Intent
     app.post("/create-payment-intent", async (req, res) => {
       const price = req.body.price;
-      console.log(price);
       const amount = parseFloat(price) * 100;
 
       try {
