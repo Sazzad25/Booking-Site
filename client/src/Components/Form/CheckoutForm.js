@@ -76,12 +76,11 @@ const CheckoutForm = ({ bookingData }) => {
         .then((res) => res.json())
         .then((data) => {
           setProcessing(false);
-          console.log(data);
+          BookingDataRemove(bookingData.home.id);
           toast.success("Booking Successful!");
           navigate("/dashboard/my-bookings");
         })
         .catch((err) => console.log(err));
-      BookingDataRemove(data);
     }
   };
   return (
@@ -105,7 +104,7 @@ const CheckoutForm = ({ bookingData }) => {
           }}
         />
         <button
-          className=" mt-4 bg-gradient-to-r from-emerald-500 to-lime-500 rounded-md text-white px-4 py-1"
+          className=" cursor-pointer mt-4 bg-gradient-to-r from-emerald-500 to-lime-500 rounded-md text-white px-4 py-1"
           type="submit"
           disabled={!stripe || !clientSecret || processing}
         >
