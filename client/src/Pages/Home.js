@@ -35,14 +35,14 @@ const Home = () => {
         <div className='flex-1'>
           <div>
             <div className='flex justify-between px-4 mt-10'>
-              <p className='text-xl font-bold'>Homes</p>
+              <p className='text-xl font-bold text-red-500'>Available car: <span className='text-purple-500'>{homes.length}</span></p>
               <Link to='/all-homes'>
                 <p>See All</p>
               </Link>
             </div>
             <div className='container pb-8 pt-2 mx-auto'>
               <div className='flex flex-wrap'>
-                {homes.slice(0, 3).map((home, i) => (
+                {homes.slice(0, 6).map((home, i) => (
                   <HomeCard key={i} home={home} />
                 ))}
               </div>

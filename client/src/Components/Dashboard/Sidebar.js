@@ -44,8 +44,8 @@ const Sidebar = ({ role, loading }) => {
         <div>
           {/* Branding & Profile Info */}
           <div>
-            <h2 className="text-3xl cursor-pointer font-semibold text-center text-gray-800 ">
-              <Link to="/">Travel Room</Link>
+            <h2 className="text-3xl cursor-pointer font-semibold text-center text-blue-500 ">
+              <Link to="/">Cars & Pricing Field</Link>
             </h2>
             <div className="flex flex-col items-center mt-6 -mx-2">
               <Link to="/dashboard">

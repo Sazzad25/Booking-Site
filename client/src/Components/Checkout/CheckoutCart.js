@@ -39,7 +39,7 @@ const CheckoutCart = ({ homeData }) => {
 
       <div className='flex border-t border-gray-200 py-2'>
         <span className='text-gray-500'>
-          ${homeData.price} x {homeData?.totalNights} nights
+          ${homeData.price} x {homeData?.totalNights} per day
         </span>
         <span className='ml-auto text-gray-900'>${sub_total}</span>
       </div>

@@ -1,7 +1,7 @@
 import {
     BeakerIcon,
     CheckBadgeIcon,
-    ChevronDownIcon,
+    // ChevronDownIcon,
     HomeIcon,
     StarIcon,
     UserIcon,
@@ -20,10 +20,10 @@ import {
             <h3 className='text-gray-400 text-xs tracking-widest title-font mb-1 mt-1'>
               {homeData.location}.
             </h3>
-            <h3 className='text-gray-400 text-xs tracking-widest title-font mb-1 mt-1'>
+            {/* <h3 className='text-gray-400 text-xs tracking-widest title-font mb-1 mt-1'>
               {homeData.total_guest} Guests {homeData.bedrooms} Bedrooms{' '}
               {homeData.bathrooms} bathrooms.
-            </h3>
+            </h3> */}
           </div>
           <div>
             <div className='flex flex-col items-center justify-center'>
@@ -34,22 +34,23 @@ import {
                 src={homeData?.host?.image}
               />
               <p>{homeData?.host?.name}</p>
+              <p>{homeData?.host?.email}</p>
             </div>
           </div>
         </div>
         <hr />
         <div>
-          <div className='flex flex-col items-start pb-4 my-2 mt-8 mx-auto max-w-7xl sm:flex-row'>
+          {/* <div className='flex flex-col items-start pb-4 my-2 mt-8 mx-auto max-w-7xl sm:flex-row'>
             <div className='inline-flex items-center justify-center flex-shrink-0 w-5 h-5 mt-1 text-neutral-600 rounded-full bg-gray-50 sm:mr-3'>
               <HomeIcon />
             </div>
             <div className='flex-grow prose sm:text-left prose-md'>
-              <p className='text-gray-500 text-xl'>Entire Home</p>
+              <p className='text-gray-500 text-xl'>Entire Car</p>
               <p className='text-gray-400'>
                 You will have the condominium to yourself.
               </p>
             </div>
-          </div>
+          </div> */}
           <div className='flex flex-col items-start pb-4 mx-auto my-2 max-w-7xl sm:flex-row'>
             <div className='inline-flex items-center justify-center flex-shrink-0 w-5 h-5 mt-1 text-neutral-600 rounded-full bg-gray-50 sm:mr-3'>
               <CheckBadgeIcon />
@@ -84,7 +85,7 @@ import {
           </div>
         </div>
         <hr />
-        <div className='mt-4 text-gray-500'>
+        {/* <div className='mt-4 text-gray-500'>
           <p>
             It's newly constructed 7 storied building maintaining building code by
             a locally famous architect. Enough lights and natural air are playing
@@ -108,7 +109,7 @@ import {
         <div className='flex gap-3 items-center text-xl text-blue-600'>
           <p>Read more about the space</p>
           <ChevronDownIcon className='h-5 w-5' />
-        </div>
+        </div> */}
         <br />
         <div>
           <p className='text-xl text-gray-900'>Reviews</p>

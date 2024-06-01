@@ -30,7 +30,7 @@ const WhosComing = ({
         value={commentData}
         onChange={event => setCommentData(event.target.value)}
         className='border block my-5 p-2'
-        placeholder={`Hello ${host?.name}! Cant wait to spend 4 night in your home`}
+        placeholder={`Hello ${host?.name}! Cant wait to spend 1 day in your home`}
         name=''
         id=''
         cols='60'

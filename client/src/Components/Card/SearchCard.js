@@ -20,10 +20,10 @@ const SearchCard = ({ home }) => {
           <h2 className='text-gray-900 title-font text-lg font-medium'>
             {home?.title}
           </h2>
-          <h3 className='text-gray-400 text-xs tracking-widest title-font mb-1 mt-1'>
+          {/* <h3 className='text-gray-400 text-xs tracking-widest title-font mb-1 mt-1'>
             {home?.total_guest} Guests {home?.bedrooms} Bedrooms{' '}
             {home?.bathrooms} bath
-          </h3>
+          </h3> */}
           <h3 className='text-gray-400 text-xs tracking-widest title-font mb-1 mt-1'>
             Wifi | Air condition | Kitchen
           </h3>
@@ -37,7 +37,7 @@ const SearchCard = ({ home }) => {
           <div className='flex gap-1 mt-1'>
             <StarIcon className='h4 w-4 text-green-500' /> <span>4.8 (10)</span>
           </div>
-          <p className='mt-1'>${home?.price} per night.</p>
+          <p className='mt-1'>${home?.price} per day.</p>
         </div>
       </div>
     </div>

@@ -26,7 +26,7 @@ const DetailsCart = ({ homeData }) => {
   return (
     <div className='p-4 md:w-1/2 lg:w-1/3 w-full h-full rounded shadow-lg'>
       <h1 className='text-gray-900 text-3xl title-font font-medium mb-2'>
-        ${homeData.price}/ <span className='font-thin'>night</span>
+        ${homeData.price}/ <span className='font-thin'>per day</span>
       </h1>
       <div className='flex gap-1 mb-2'>
         <StarIcon className='h4 w-4 text-green-500' />{' '}
@@ -42,14 +42,14 @@ const DetailsCart = ({ homeData }) => {
         <div>{format(new Date(homeData?.to), 'P')}</div>
       </div>
 
-      <div className='flex border-t border-gray-200 py-2'>
+      {/* <div className='flex border-t border-gray-200 py-2'>
         <span className='text-gray-500'>Maximum Guest</span>
         <span className='ml-auto text-gray-900'>{homeData.total_guest}</span>
-      </div>
+      </div> */}
 
       <div className='flex border-t border-gray-200 py-2'>
         <span className='text-gray-500'>
-          ${homeData.price} x {totalNights} nights
+          ${homeData.price} x {totalNights} per day
         </span>
         <span className='ml-auto text-gray-900'>${sub_total}</span>
       </div>

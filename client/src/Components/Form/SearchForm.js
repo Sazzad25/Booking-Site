@@ -5,7 +5,7 @@ import DatePicker from 'react-datepicker'
 import { useNavigate } from 'react-router-dom'
 
 const SearchForm = () => {
-  const [location, setLocation] = useState('Dhaka')
+  const [location, setLocation] = useState('')
   const [arrivalDate, setArrivalDate] = useState(new Date())
   const [departureDate, setDepartureDate] = useState(
     new Date(arrivalDate.getTime() + 24 * 60 * 60 * 1000)
@@ -35,7 +35,7 @@ const SearchForm = () => {
             htmlFor='location'
             className='block text-md font-bold text-gray-800'
           >
-            Location
+            Search your favorite car
           </label>
           <input
             type='text'
@@ -43,7 +43,7 @@ const SearchForm = () => {
             onChange={event => setLocation(event.target.value)}
             name='location'
             required
-            placeholder='Add city, Landmark or address'
+            placeholder='please type your car name'
             className='block w-full mt-1 p-1 text-gray-700 bg-white   focus:border-green-400 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40'
           />
         </div>

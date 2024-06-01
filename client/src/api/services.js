@@ -66,9 +66,9 @@ export const deleteHome = async id => {
 }
 
 // Search Result
-export const getSearchResult = async (location, from, to, total_guest) => {
+export const getSearchResult = async (location, title, from, to, total_guest) => {
   const response = await fetch(
-    `${process.env.REACT_APP_API_URL}/search-result?location=${location}&from=${from}&to=${to}&total_guest=${total_guest}`
+    `${process.env.REACT_APP_API_URL}/search-result?location=${location}&title=${title}&from=${from}&to=${to}&total_guest=${total_guest}`
   )
   const data = await response.json()
   return data

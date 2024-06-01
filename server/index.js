@@ -9,41 +9,9 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const app = express();
 const port = process.env.PORT || 8000;
 
-// Middlewares
-// const whitelist = ['http://localhost:3000', 'https://aircnc-a740e.web.app']
-// const corsOptions = {
-//   origin: function (origin, callback) {
-//     if (!origin || whitelist.indexOf(origin) !== -1) {
-//       callback(null, true)
-//     } else {
-//       callback(new Error('Not allowed by CORS'))
-//     }
-//   },
-//   credentials: true,
-// }
 app.use(cors());
 app.use(express.json())._router;
 
-// Decode JWT
-// function verifyJWT(req, res, next) {
-//   const authHeader = req.headers.authorization
-
-//   if (!authHeader) {
-//     return res.status(401).send({ message: 'unauthorized access' })
-//   }
-//   const token = authHeader.split(' ')[1]
-
-//   jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, function (err, decoded) {
-//     if (err) {
-//       return res.status(403).send({ message: 'Forbidden access' })
-//     }
-//     console.log(decoded)
-//     req.decoded = decoded
-//     next()
-//   })
-// }
-
-// Send Email
 const sendMail = (emailData, email) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -83,19 +51,6 @@ async function run() {
     const usersCollection = client.db("roomUser").collection("users");
     const bookingsCollection = client.db("roomUser").collection("bookings");
 
-    // Verify Admin
-    // const verifyAdmin = async (req, res, next) => {
-    //   const decodedEmail = req.decoded.email
-    //   const query = { email: decodedEmail }
-    //   const user = await usersCollection.findOne(query)
-
-    //   if (user?.role !== 'admin') {
-    //     return res.status(403).send({ message: 'forbidden access' })
-    //   }
-    //   console.log('Admin true')
-    //   next()
-    // }
-
     // Save user email & generate JWT
     app.put("/user/:email", async (req, res) => {
       const email = req.params.email;
@@ -112,9 +67,6 @@ async function run() {
         options
       );
 
-      // const token = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {
-      //   expiresIn: '1d',
-      // })
       console.log(result);
       res.send(result);
     });
@@ -130,11 +82,6 @@ async function run() {
     // Get A Single User
     app.get("/user/:email", async (req, res) => {
       const email = req.params.email;
-      // const decodedEmail = req.decoded.email
-
-      // if (email !== decodedEmail) {
-      //   return res.status(403).send({ message: 'forbidden access' })
-      // }
       const query = { email: email };
       const user = await usersCollection.findOne(query);
       res.send(user);
@@ -152,11 +99,6 @@ async function run() {
     // Get All Homes for host
     app.get("/homes/:email", async (req, res) => {
       const email = req.params.email;
-      // const decodedEmail = req.decoded.email
-
-      // if (email !== decodedEmail) {
-      //   return res.status(403).send({ message: 'forbidden access' })
-      // }
       const query = {
         "host.email": email,
       };
@@ -242,21 +184,6 @@ async function run() {
       res.send(booking);
     });
 
-    //
-    // app.delete("/restart/:id", async (req, res) => {
-    //   const id = req.params.id;
-    //   console.log(id);
-    //   const query = { _id: { $ne: ObjectId(id) } }; // Filter out the document with the specified id
-
-    //   try {
-    //     const books = await homesCollection.find(query).toArray(); // Find all documents except the one with the specified id
-    //     res.send(books); // Send the result to the client
-    //   } catch (error) {
-    //     res
-    //       .status(500)
-    //       .send({ message: "Error fetching data", error: error.message });
-    //   }
-    // });
     app.delete("/restart/:id", async (req, res) => {
       const id = req.params.id;
       console.log(id);

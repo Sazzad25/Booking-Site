@@ -12,11 +12,11 @@ const ReviewHouse = ({ setSelectedIndex, homeData }) => {
   return (
     <>
       <h1 className='text-gray-900 title-font text-4xl font-medium'>
-        Review house rules
+        Review car rules
       </h1>
       <br />
       <h3 className='text-gray-900 title-font text-xl font-medium'>
-        {homeData?.totalNights} nights in {homeData?.location}
+        {homeData?.totalNights} day in {homeData?.location}
       </h3>
       <div className='flex flex-wrap gap-10 mt-4'>
         <div className='flex justify-between gap-2'>
@@ -66,8 +66,8 @@ const ReviewHouse = ({ setSelectedIndex, homeData }) => {
           </div>
         </div>
       </div>
-      <p className='my-8 text-gray-500'>Self check-in with building staff</p>
-      <hr />
+      {/* <p className='my-8 text-gray-500'>Self check-in with building staff</p> */}
+      {/* <hr /> */}
       <p className='text-xl font-bold my-4'>Things to keep in mind</p>
       <div>
         <div className='flex flex-col items-center my-2 mt-8 mx-auto max-w-7xl sm:flex-row'>
@@ -101,15 +101,15 @@ const ReviewHouse = ({ setSelectedIndex, homeData }) => {
             <FireIcon className=' w-5 h-5' />
           </div>
           <div className='flex-grow prose sm:text-left prose-md'>
-            <p className='text-gray-800 text-medium'>Smoking allowed</p>
+            <p className='text-gray-800 text-medium'>Smoking not allowed</p>
           </div>
         </div>
       </div>
 
-      <div className='flex gap-3 items-center text-medium text-blue-600'>
+      {/* <div className='flex gap-3 items-center text-medium text-blue-600'>
         <p>Read more</p>
         <ChevronDownIcon className='h-5 w-5' />
-      </div>
+      </div> */}
       <br />
 
       <button
